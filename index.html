@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototipo visual de inventario para una tienda de tecnología, creado solo con HTML y CSS.">
+  <title>Proyecto 07 | TecnoStock</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="#inicio"><span class="brand-logo">T</span><span><strong>TecnoStock</strong><small>Tienda de tecnología</small></span></a>
+      <p class="menu-label">MENÚ PRINCIPAL</p>
+      <nav aria-label="Navegación principal">
+        <a href="#inicio"><span aria-hidden="true">▦</span> Inicio</a>
+        <a href="#productos"><span aria-hidden="true">▤</span> Productos</a>
+        <a href="#detalle"><span aria-hidden="true">◫</span> Detalle del producto</a>
+        <a href="#registrar"><span aria-hidden="true">＋</span> Registrar producto</a>
+        <a href="#inventario"><span aria-hidden="true">▥</span> Inventario</a>
+        <a href="#movimientos"><span aria-hidden="true">⇄</span> Movimientos</a>
+        <a href="#alertas"><span aria-hidden="true">◉</span> Alertas de stock</a>
+        <a href="#administracion"><span aria-hidden="true">⚙</span> Panel administrativo</a>
+      </nav>
+      <p class="sidebar-note">Proyecto académico · HTML + CSS</p>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <span class="topbar-title"><span class="green-dot" aria-hidden="true"></span> Sistema de inventario</span>
+        <a class="button button-primary" href="#registrar">＋ Nuevo producto</a>
+      </header>
+      <main id="contenido">
+        <div class="demo-banner" role="note"><strong>Prototipo visual:</strong> los productos son ejemplos. Los formularios, la búsqueda y los filtros no guardan ni modifican información.</div>
+
+        <!-- Vista 1: Inicio -->
+        <section class="page" id="inicio" aria-labelledby="titulo-inicio">
+          <div class="page-heading"><div><p class="eyebrow">VISTA GENERAL</p><h1 id="titulo-inicio">Panel de inventario</h1><p>Una vista rápida del stock de la tienda y los productos que requieren atención.</p></div><a class="button button-primary" href="#productos">Ver productos →</a></div>
+          <div class="metrics">
+            <article class="metric"><span>Productos registrados</span><strong>7</strong><small>Referencias de tecnología</small></article>
+            <article class="metric"><span>Unidades disponibles</span><strong>49</strong><small>Existencias totales</small></article>
+            <article class="metric"><span>Stock bajo</span><strong>3</strong><small>Requieren reposición</small></article>
+            <article class="metric"><span>Agotados</span><strong>1</strong><small>Sin unidades disponibles</small></article>
+          </div>
+          <div class="columns">
+            <article class="card"><div class="card-heading"><div><h2>Atención prioritaria</h2><p>Productos agotados o con pocas unidades</p></div><a href="#alertas">Ver alertas →</a></div>
+              <ul class="item-list">
+                <li><span><strong>Monitor LED 24 pulgadas</strong><small>TEC-004 · Monitores</small></span><span class="right"><b>0 uds.</b><em class="badge badge-out">Agotado</em></span></li>
+                <li><span><strong>SSD externo 1 TB</strong><small>TEC-006 · Almacenamiento</small></span><span class="right"><b>2 uds.</b><em class="badge badge-low">Stock bajo</em></span></li>
+                <li><span><strong>Teclado mecánico compacto</strong><small>TEC-002 · Periféricos</small></span><span class="right"><b>3 uds.</b><em class="badge badge-low">Stock bajo</em></span></li>
+                <li><span><strong>Audífonos Bluetooth</strong><small>TEC-005 · Audio</small></span><span class="right"><b>5 uds.</b><em class="badge badge-low">Stock bajo</em></span></li>
+              </ul>
+            </article>
+            <article class="card"><div class="card-heading"><div><h2>Resumen de actividad</h2><p>Movimientos de ejemplo del inventario</p></div><a href="#movimientos">Ver movimientos →</a></div>
+              <ul class="item-list activity">
+                <li><span class="activity-mark output">↘</span><span><strong>Venta · Monitor LED</strong><small>Salida de 4 unidades</small></span><b>−4</b></li>
+                <li><span class="activity-mark output">↘</span><span><strong>Venta · SSD externo</strong><small>Salida de 3 unidades</small></span><b>−3</b></li>
+                <li><span class="activity-mark output">↘</span><span><strong>Venta · Teclado mecánico</strong><small>Salida de 2 unidades</small></span><b>−2</b></li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- Vista 2: Productos -->
+        <section class="page" id="productos" aria-labelledby="titulo-productos">
+          <div class="page-heading"><div><p class="eyebrow">CATÁLOGO</p><h1 id="titulo-productos">Productos</h1><p>Listado ilustrativo de artículos de la tienda.</p></div><a class="button button-primary" href="#registrar">＋ Registrar producto</a></div>
+          <div class="card"><div class="filters">
+            <label>Buscar por nombre o código <input type="search" placeholder="Búsqueda no disponible en esta maqueta" disabled></label>
+            <label>Categoría <select disabled><option>Todas las categorías</option></select></label>
+            <label>Estado <select disabled><option>Todos los estados</option></select></label>
+          </div><p class="help">Búsqueda y filtros: elementos de diseño pendientes de programación.</p>
+            <div class="card-heading table-title"><h2>Listado de productos</h2><span class="muted">7 productos de ejemplo</span></div>
+            <div class="table-wrap"><table><thead><tr><th scope="col">Producto</th><th scope="col">Categoría</th><th scope="col" class="number">Precio</th><th scope="col" class="number">Stock</th><th scope="col">Estado</th><th scope="col">Detalle</th></tr></thead><tbody>
+              <tr><td><strong>Laptop ultraligera 14 pulgadas</strong><small>TEC-001</small></td><td>Computadoras</td><td class="number">S/ 3 299,90</td><td class="number">12</td><td><em class="badge badge-available">Disponible</em></td><td><a href="#detalle">Ver ejemplo →</a></td></tr>
+              <tr><td><strong>Teclado mecánico compacto</strong><small>TEC-002</small></td><td>Periféricos</td><td class="number">S/ 269,90</td><td class="number">3</td><td><em class="badge badge-low">Stock bajo</em></td><td><a href="#detalle">Ver detalle →</a></td></tr>
+              <tr><td><strong>Mouse inalámbrico ergonómico</strong><small>TEC-003</small></td><td>Periféricos</td><td class="number">S/ 119,00</td><td class="number">18</td><td><em class="badge badge-available">Disponible</em></td><td><a href="#detalle">Ver ejemplo →</a></td></tr>
+              <tr><td><strong>Monitor LED 24 pulgadas</strong><small>TEC-004</small></td><td>Monitores</td><td class="number">S/ 649,00</td><td class="number">0</td><td><em class="badge badge-out">Agotado</em></td><td><a href="#detalle">Ver ejemplo →</a></td></tr>
+              <tr><td><strong>Audífonos Bluetooth</strong><small>TEC-005</small></td><td>Audio</td><td class="number">S/ 189,90</td><td class="number">5</td><td><em class="badge badge-low">Stock bajo</em></td><td><a href="#detalle">Ver ejemplo →</a></td></tr>
+              <tr><td><strong>SSD externo 1 TB</strong><small>TEC-006</small></td><td>Almacenamiento</td><td class="number">S/ 399,00</td><td class="number">2</td><td><em class="badge badge-low">Stock bajo</em></td><td><a href="#detalle">Ver ejemplo →</a></td></tr>
+              <tr><td><strong>Cámara web HD</strong><small>TEC-007</small></td><td>Accesorios</td><td class="number">S/ 159,00</td><td class="number">9</td><td><em class="badge badge-available">Disponible</em></td><td><a href="#detalle">Ver ejemplo →</a></td></tr>
+            </tbody></table></div>
+          </div>
+        </section>
+
+        <!-- Vista 3: Detalle del producto -->
+        <section class="page" id="detalle" aria-labelledby="titulo-detalle">
+          <div class="page-heading"><div><p class="eyebrow">CATÁLOGO / DETALLE</p><h1 id="titulo-detalle">Teclado mecánico compacto</h1><p>Ejemplo de ficha individual · Código TEC-002</p></div><a class="button button-outline" href="#productos">← Volver a productos</a></div>
+          <div class="detail-layout"><article class="card"><div class="card-heading"><h2>Información del producto</h2><span class="badge badge-low">Stock bajo</span></div>
+            <dl class="detail-list"><div><dt>Código</dt><dd>TEC-002</dd></div><div><dt>Categoría</dt><dd>Periféricos</dd></div><div><dt>Precio</dt><dd>S/ 269,90</dd></div><div><dt>Stock mínimo</dt><dd>5 unidades</dd></div><div class="wide"><dt>Descripción</dt><dd>Teclado mecánico compacto para trabajo y estudio.</dd></div></dl>
+          </article><aside class="card stock-card"><h2>Existencias</h2><strong>3</strong><p>unidades disponibles</p><span class="badge badge-low">Stock bajo</span><hr><p>Alerta cuando el stock es mayor que 0 y menor o igual a 5 unidades.</p><a class="button button-outline" href="#movimientos">Ver movimientos</a></aside></div>
+          <article class="card spaced"><div class="card-heading"><h2>Historial del producto</h2><span class="muted">Datos ilustrativos</span></div><div class="table-wrap"><table><thead><tr><th scope="col">Tipo</th><th scope="col">Cantidad</th><th scope="col">Stock anterior</th><th scope="col">Stock final</th><th scope="col">Motivo</th></tr></thead><tbody><tr><td>Salida</td><td>2</td><td>5</td><td>3</td><td>Venta</td></tr><tr><td>Entrada</td><td>5</td><td>0</td><td>5</td><td>Carga inicial</td></tr></tbody></table></div></article>
+        </section>
+
+        <!-- Vista 4: Registrar producto -->
+        <section class="page" id="registrar" aria-labelledby="titulo-registrar">
+          <div class="page-heading"><div><p class="eyebrow">CATÁLOGO / NUEVO</p><h1 id="titulo-registrar">Registrar producto</h1><p>Diseño del formulario de registro; no guarda datos en esta versión.</p></div><a class="button button-outline" href="#productos">← Ver productos</a></div>
+          <div class="card form-card"><h2>Información del nuevo producto</h2><p class="help">Los campos muestran cómo se capturarían los datos en una versión programada.</p>
+            <form><div class="form-grid">
+              <label>Código único <input type="text" name="codigo" placeholder="Ej.: TEC-008" maxlength="20"></label>
+              <label>Nombre del producto <input type="text" name="nombre" placeholder="Ej.: cargador USB-C"></label>
+              <label>Categoría <input type="text" name="categoria" placeholder="Ej.: Accesorios"></label>
+              <label>Precio en soles <input type="number" name="precio" min="0" step="0.01" placeholder="0.00"></label>
+              <label>Stock inicial <input type="number" name="stock" min="0" placeholder="0"></label>
+              <label>Umbral de stock bajo <input type="number" name="umbral" min="0" placeholder="5"></label>
+              <label class="wide">Descripción opcional <textarea name="descripcion" rows="4" placeholder="Características del producto"></textarea></label>
+            </div><div class="form-actions"><a class="button button-outline" href="#productos">Cancelar</a><button class="button button-primary" type="button" disabled title="La maqueta no almacena datos">Guardar (solo demostración)</button></div></form>
+          </div>
+        </section>
+
+        <!-- Vista 5: Inventario -->
+        <section class="page" id="inventario" aria-labelledby="titulo-inventario">
+          <div class="page-heading"><div><p class="eyebrow">EXISTENCIAS</p><h1 id="titulo-inventario">Inventario</h1><p>Estado de las unidades disponibles por producto.</p></div><a class="button button-primary" href="#movimientos">Ver movimientos →</a></div>
+          <div class="metrics metrics-small"><article class="metric"><span>Productos</span><strong>7</strong></article><article class="metric"><span>Unidades</span><strong>49</strong></article><article class="metric"><span>Stock bajo</span><strong>3</strong></article><article class="metric"><span>Agotados</span><strong>1</strong></article></div>
+          <div class="card"><div class="card-heading"><h2>Existencias por producto</h2><span class="muted">Datos de ejemplo</span></div><div class="table-wrap"><table><thead><tr><th scope="col">Código</th><th scope="col">Producto</th><th scope="col" class="number">Stock</th><th scope="col" class="number">Mínimo</th><th scope="col">Estado</th></tr></thead><tbody>
+            <tr><td>TEC-001</td><td>Laptop ultraligera 14 pulgadas</td><td class="number">12</td><td class="number">4</td><td><em class="badge badge-available">Disponible</em></td></tr>
+            <tr><td>TEC-002</td><td>Teclado mecánico compacto</td><td class="number">3</td><td class="number">5</td><td><em class="badge badge-low">Stock bajo</em></td></tr>
+            <tr><td>TEC-003</td><td>Mouse inalámbrico ergonómico</td><td class="number">18</td><td class="number">6</td><td><em class="badge badge-available">Disponible</em></td></tr>
+            <tr><td>TEC-004</td><td>Monitor LED 24 pulgadas</td><td class="number">0</td><td class="number">3</td><td><em class="badge badge-out">Agotado</em></td></tr>
+            <tr><td>TEC-005</td><td>Audífonos Bluetooth</td><td class="number">5</td><td class="number">5</td><td><em class="badge badge-low">Stock bajo</em></td></tr>
+            <tr><td>TEC-006</td><td>SSD externo 1 TB</td><td class="number">2</td><td class="number">4</td><td><em class="badge badge-low">Stock bajo</em></td></tr>
+            <tr><td>TEC-007</td><td>Cámara web HD</td><td class="number">9</td><td class="number">3</td><td><em class="badge badge-available">Disponible</em></td></tr>
+          </tbody></table></div></div>
+        </section>
+
+        <!-- Vista 6: Movimientos -->
+        <section class="page" id="movimientos" aria-labelledby="titulo-movimientos">
+          <div class="page-heading"><div><p class="eyebrow">TRAZABILIDAD</p><h1 id="titulo-movimientos">Movimientos</h1><p>Ejemplo de entradas y salidas de productos.</p></div></div>
+          <div class="card form-card"><h2>Registrar un movimiento</h2><p class="help">Formulario visual: no modifica las cantidades mostradas.</p><form><div class="form-grid">
+            <label>Producto <select name="producto"><option>Selecciona un producto</option><option>Teclado mecánico compacto</option><option>SSD externo 1 TB</option><option>Monitor LED 24 pulgadas</option></select></label>
+            <label>Tipo de movimiento <select name="tipo"><option>Entrada</option><option>Salida</option></select></label>
+            <label>Cantidad <input name="cantidad" type="number" min="1" placeholder="Ej.: 5"></label>
+            <label>Motivo <input name="motivo" type="text" placeholder="Ej.: compra o venta"></label>
+          </div><div class="form-actions"><button class="button button-primary" type="button" disabled title="La maqueta no almacena movimientos">Registrar (solo demostración)</button></div></form></div>
+          <div class="card spaced"><div class="card-heading"><h2>Historial ilustrativo</h2><span class="muted">Movimientos vinculados al stock mostrado</span></div><div class="table-wrap"><table><thead><tr><th scope="col">Producto</th><th scope="col">Tipo</th><th scope="col" class="number">Cantidad</th><th scope="col" class="number">Stock final</th><th scope="col">Motivo</th></tr></thead><tbody>
+            <tr><td>Monitor LED 24 pulgadas</td><td><span class="movement-out">↘ Salida</span></td><td class="number">4</td><td class="number">0</td><td>Venta</td></tr>
+            <tr><td>SSD externo 1 TB</td><td><span class="movement-out">↘ Salida</span></td><td class="number">3</td><td class="number">2</td><td>Venta</td></tr>
+            <tr><td>Teclado mecánico compacto</td><td><span class="movement-out">↘ Salida</span></td><td class="number">2</td><td class="number">3</td><td>Venta</td></tr>
+            <tr><td>Monitor LED 24 pulgadas</td><td><span class="movement-in">↗ Entrada</span></td><td class="number">4</td><td class="number">4</td><td>Carga inicial</td></tr>
+            <tr><td>SSD externo 1 TB</td><td><span class="movement-in">↗ Entrada</span></td><td class="number">5</td><td class="number">5</td><td>Carga inicial</td></tr>
+            <tr><td>Teclado mecánico compacto</td><td><span class="movement-in">↗ Entrada</span></td><td class="number">5</td><td class="number">5</td><td>Carga inicial</td></tr>
+          </tbody></table></div></div>
+        </section>
+
+        <!-- Vista 7: Alertas -->
+        <section class="page" id="alertas" aria-labelledby="titulo-alertas">
+          <div class="page-heading"><div><p class="eyebrow">SEGUIMIENTO</p><h1 id="titulo-alertas">Alertas de stock</h1><p>Productos que requieren revisión o reposición.</p></div><a class="button button-outline" href="#inventario">Ver inventario</a></div>
+          <div class="alert-counters"><div class="alert-counter alert-red"><strong>1</strong><span>Producto agotado</span></div><div class="alert-counter alert-yellow"><strong>3</strong><span>Productos con stock bajo</span></div></div>
+          <article class="card"><div class="card-heading"><div><h2>Agotado</h2><p>Stock igual a cero.</p></div></div><ul class="item-list"><li><span><strong>Monitor LED 24 pulgadas</strong><small>TEC-004 · Mínimo: 3</small></span><span class="right"><b>0 unidades</b><em class="badge badge-out">Agotado</em></span></li></ul></article>
+          <article class="card spaced"><div class="card-heading"><div><h2>Stock bajo</h2><p>Stock mayor que cero y menor o igual al mínimo definido.</p></div></div><ul class="item-list">
+            <li><span><strong>Teclado mecánico compacto</strong><small>TEC-002 · Mínimo: 5</small></span><span class="right"><b>3 unidades</b><em class="badge badge-low">Stock bajo</em></span></li>
+            <li><span><strong>Audífonos Bluetooth</strong><small>TEC-005 · Mínimo: 5</small></span><span class="right"><b>5 unidades</b><em class="badge badge-low">Stock bajo</em></span></li>
+            <li><span><strong>SSD externo 1 TB</strong><small>TEC-006 · Mínimo: 4</small></span><span class="right"><b>2 unidades</b><em class="badge badge-low">Stock bajo</em></span></li>
+          </ul></article>
+        </section>
+
+        <!-- Vista 8: Panel administrativo -->
+        <section class="page" id="administracion" aria-labelledby="titulo-administracion">
+          <div class="page-heading"><div><p class="eyebrow">GESTIÓN</p><h1 id="titulo-administracion">Panel administrativo</h1><p>Resumen visual de productos, categorías y movimientos.</p></div></div>
+          <div class="metrics"><article class="metric"><span>Productos</span><strong>7</strong><small>Referencias</small></article><article class="metric"><span>Categorías</span><strong>6</strong><small>Familias de productos</small></article><article class="metric"><span>Unidades</span><strong>49</strong><small>Stock total</small></article><article class="metric"><span>Alertas</span><strong>4</strong><small>3 bajos y 1 agotado</small></article></div>
+          <div class="columns"><article class="card"><div class="card-heading"><h2>Productos por categoría</h2></div><ul class="category-list"><li>Computadoras <strong>1</strong></li><li>Periféricos <strong>2</strong></li><li>Monitores <strong>1</strong></li><li>Audio <strong>1</strong></li><li>Almacenamiento <strong>1</strong></li><li>Accesorios <strong>1</strong></li></ul></article>
+            <article class="card"><div class="card-heading"><h2>Acerca de esta versión</h2></div><p>Esta maqueta permite presentar la estructura, navegación y apariencia del sistema utilizando únicamente HTML y CSS.</p><p>Los indicadores fueron escritos como datos de ejemplo. Para registrar cambios, calcular alertas automáticamente y conservar información se requeriría programación adicional.</p><a class="button button-outline" href="#inicio">Volver al inicio</a></article></div>
+        </section>
+      </main>
+      <footer>TecnoStock · Proyecto 07 · Prototipo visual en HTML y CSS</footer>
+    </div>
+  </div>
+</body>
+</html>
